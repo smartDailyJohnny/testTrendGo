@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>台灣電子地圖測試</title>
+
+    <script type="text/javascript" src="http://api.map.com.tw/js/getAPI.asp?v=1&key=8AEF281DA4B0DD55327129767A166167684FE493" charset="big5"></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    
+
+    <style>
+        /* Reset */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Map Container */
+        #MapLayer {
+            height: 100%;
+        }
+
+        /* Tool Panel */
+        #tool {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            z-index: 98;
+            display: block;
+            padding: 0;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            background: #FFFFFF;
+            opacity: 0.9;
+            font-size: 13px;
+            font-family: "Lucida Grande", Arial, "Lucida Sans Unicode", sans-serif;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div id="MapLayer"></div>
+
+    <div id="tool">
+        <p>  
+            功能說明：<br>
+            添加地圖且設定初始位置、圖層層級。
+        </p>
+        <p>
+            範例預設：<br>
+            初始位置(121.57, 25.08) ，圖層層級第<span style="font-weight:500;">7</span>層
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        var map;
+        function init() {
+          try {
+            console.log("init ran")
+            console.log("iMap", iMap)
+            map = new iMap(document.getElementById("MapLayer"))
+            map.centerMap(new Point(121.57, 25.08), 7)
+          } catch(error) {
+            console.error("init failed", error)
+          }
+        }
+    </script>
+</body>
+</html>
