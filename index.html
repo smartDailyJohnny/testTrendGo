@@ -64,7 +64,10 @@
             map = new iMap(document.getElementById("MapLayer"))
             map.centerMap(new Point(120.6702081, 24.16515), 7)
             map.ZoomTo(12)
-            ScaleBar()
+            // 建立 marker
+            var p = map.getCenter()
+            m = new Marker(new Point(p.x, p.y), "", "", "", "Position1", "center")
+            map.addOverlay(m)
           } catch(error) {
             console.error("init failed", error)
           }
