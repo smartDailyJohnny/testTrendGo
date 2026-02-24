@@ -63,6 +63,7 @@
             console.log("iMap", iMap)
             map = new iMap(document.getElementById("MapLayer"))
             map.centerMap(new Point(120.6702081, 24.16515), 7)
+            map.ZoomTo(12)
           } catch(error) {
             console.error("init failed", error)
           }
