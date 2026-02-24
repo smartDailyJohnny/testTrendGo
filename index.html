@@ -66,7 +66,7 @@
             map.ZoomTo(12)
             // 建立 marker
             var p = map.getCenter()
-            m = new Marker(new Point(p.x, p.y), "", "", "https://static.thenounproject.com/png/888711-200.png", "Position1", "center")
+            m = new Marker(new Point(p.x, p.y), "", "", "", "Position1", "center")
             map.addOverlay(m)
           } catch(error) {
             console.error("init failed", error)
